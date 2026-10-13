@@ -1,15 +1,17 @@
-# Your distro. Change anything here, commit, and GitHub Actions builds it.
+# Recess Linux: a live desktop for families and classrooms.
 # Every option is explained at
 # https://github.com/Eric-Ness/linuxlive/wiki/Writing-a-Spec
 schema_version: 1
-name: My Distro          # up to 40 characters; shown in the boot menu and About screen
-version: "0.1"           # keep the quotes
-base: ubuntu             # ubuntu or fedora
-desktop: cinnamon        # gnome, kde or cinnamon
-apps:                    # app ids from the wiki's Apps table, installed from Flathub
+name: Recess Linux
+version: "0.1"
+base: fedora
+desktop: kde
+apps:
   - firefox
-  - vlc
+  - gcompris
+  - tuxpaint
+  - libreoffice
 branding:
-  wallpaper: assets/wallpaper.png   # PNG, at least 1280x720, with one strong colour
-  logo: assets/logo.png             # square PNG of 128, 256 or 512 pixels
-  accent_color: "#c2185b"           # used by KDE and GNOME; keep the quotes
+  wallpaper: assets/wallpaper.png   # sky, sun, hills and toy blocks; drawn for Recess Linux, CC0
+  logo: assets/logo.png             # three toy blocks; drawn for Recess Linux, CC0
+  accent_color: "#1e88e5"
