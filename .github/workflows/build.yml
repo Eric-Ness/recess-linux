@@ -2,7 +2,7 @@
 # it against the spec. Runs on every push to main, and by hand from the Actions
 # tab (Run workflow). Download the ISO from the finished run's Artifacts.
 #
-# To build with a newer linuxlive release, change @v0.1.3 below.
+# To build with a newer linuxlive release, change @v0.4.0 below.
 name: build
 
 on:
@@ -13,6 +13,9 @@ on:
 
 permissions:
   contents: read
+  # Fedora-based distros: the build publishes its system image to this
+  # repository's packages (ghcr.io), which the installer and updates use.
+  packages: write
 
 # A new push cancels a build still running for an older one.
 concurrency:
@@ -21,6 +24,7 @@ concurrency:
 
 jobs:
   build:
-    uses: Eric-Ness/linuxlive/.github/workflows/build.yml@v0.1.3
+    uses: Eric-Ness/linuxlive/.github/workflows/build.yml@v0.4.0
     with:
       spec: linuxlive.yaml
+      publish-image: true
